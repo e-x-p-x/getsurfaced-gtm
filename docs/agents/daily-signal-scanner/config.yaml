@@ -1,0 +1,71 @@
+agent:
+  name: daily-signal-scanner
+  type: dual-layer
+  schedule: "Mon-Fri 08:00 CET"
+  model: sonnet
+  max_turns: 5
+  allowed_tools:
+    - WebSearch
+    - Read
+    - Write
+
+data_sources:
+  - name: reddit
+    type: api
+    endpoint: "https://www.reddit.com/r/{subreddit}/search.json"
+    auth_env_var: null  # Reddit public JSON API, no auth needed
+    rate_limit: 60  # requests per minute (Reddit rate limit)
+    subreddits:
+      - SEO
+      - bigseo
+      - SEO_and_AI
+      - DigitalMarketing
+      - TechSEO
+    keywords:
+      - "GEO optimization"
+      - "AI search visibility"
+      - "ChatGPT brand mention"
+      - "LLM optimization"
+      - "generative engine optimization"
+      - "AI search tool"
+    fields_to_keep:
+      - id
+      - subreddit
+      - title
+      - url
+      - score
+      - num_comments
+      - author
+      - selftext  # truncated to 500 chars
+      - created_utc
+    max_items: 100  # cap per run across all subreddits
+
+budget:
+  max_per_run: 1.00  # USD — generous ceiling, actual cost ~$0.23
+  monthly_ceiling: 50.00
+  tracking_file: "logs/spend_daily-signal-scanner.json"
+  alert_threshold: 80  # warn when spend hits 80% of monthly ceiling
+
+output:
+  type: file
+  destination: "docs/reports/daily/"
+  format: markdown
+  filename_pattern: "YYYY-MM-DD.md"
+  max_hot_leads: 5
+  max_warm_leads: 10
+
+filters:
+  min_score: 8  # minimum composite score (out of 15) to include as WARM
+  hot_threshold: 12  # minimum composite score to classify as HOT
+  max_age_hours: 48  # ignore Reddit posts older than 2 days
+  dedup_field: id
+  dedup_source: "logs/processed_ids.json"
+  max_dedup_history: 5000  # keep last N processed IDs
+
+schedule:
+  type: launchd
+  weekdays_only: true
+  min_hours_between_runs: 20
+  timezone: "Europe/Amsterdam"
+  hour: 8
+  minute: 0

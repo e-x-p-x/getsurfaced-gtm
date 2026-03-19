@@ -1,0 +1,29 @@
+=== daily-signal-scanner starting at Thu Mar 19 15:44:34 CET 2026 ===
+--- Layer 1: Scraping Reddit ---
+--- Deduplicating ---
+Raw: 39 | After dedup: 21 | Previously seen: 18
+New signals to process: 21
+--- Building prompt ---
+--- Invoking Claude Sonnet ---
+Brief is written to `docs/reports/daily/2026-03-19.md`. Here's the summary:
+
+---
+
+**Daily Signal Brief — 2026-03-19**
+
+Scanned 21 signals → 3 HOT, 4 WARM, 1 competitor alert, 16 skipped.
+
+## HOT Leads (act today)
+
+1. **Dailan_Grace** (r/DigitalMarketing, 12/15) — Noticed competitors outranking them in ChatGPT despite comparable content. Textbook GEO Visibility Gap. Draft Reddit DM ready.
+
+2. **Gullible_Brother_141** (r/DigitalMarketing, 12/15) — Expert GEO practitioner doing "audit after audit" manually. Strong Segment 3 (consultant) match — Surfaced automates exactly their current work. Thread reply + DM sequence drafted.
+
+3. **Greg Bessoni / gregb_parkingaccess** (r/TechSEO, 12/15) — Best lead of the day. Founder of parkingaccess.com, 20+ year SEO veteran, runs the "SEO+AI Show" Substack. Direct email available at greg@parkingaccess.com. His open-source workflow includes AI citation checks but has a blind spot post-publication — that's Surfaced's exact pitch.
+
+## Notable
+- **vande096** is building a competing tool — flagged for competitive monitoring, not outreach.
+- WARM leads are mostly knowledge-sharing practitioners not yet in tool-evaluation mode.
+--- Updating processed IDs ---
+Added 21 IDs to processed log (total: 21)
+=== daily-signal-scanner completed at Thu Mar 19 15:49:24 CET 2026 ===

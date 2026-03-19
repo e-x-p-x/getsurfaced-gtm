@@ -1,0 +1,79 @@
+<!--
+  Daily Signal Scanner — macOS launchd schedule
+
+  Installation:
+  1. Copy this file to ~/Library/LaunchAgents/
+  2. Update the ProgramArguments path to point to your run.sh location
+  3. Load: launchctl load ~/Library/LaunchAgents/com.surfaced.daily-signal-scanner.plist
+  4. Verify: launchctl list | grep daily-signal-scanner
+
+  Uninstall:
+  1. Unload: launchctl unload ~/Library/LaunchAgents/com.surfaced.daily-signal-scanner.plist
+  2. Delete the plist file
+
+  Note: The shell script has its own gate check (20h minimum between runs),
+  so even if launchd fires unexpectedly, it won't double-run.
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.surfaced.daily-signal-scanner</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/jozefmisik/Dev/getsurfaced-gtm/docs/agents/daily-signal-scanner/run.sh</string>
+    </array>
+
+    <key>StartCalendarInterval</key>
+    <array>
+        <!-- Monday -->
+        <dict>
+            <key>Weekday</key><integer>1</integer>
+            <key>Hour</key><integer>8</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <!-- Tuesday -->
+        <dict>
+            <key>Weekday</key><integer>2</integer>
+            <key>Hour</key><integer>8</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <!-- Wednesday -->
+        <dict>
+            <key>Weekday</key><integer>3</integer>
+            <key>Hour</key><integer>8</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <!-- Thursday -->
+        <dict>
+            <key>Weekday</key><integer>4</integer>
+            <key>Hour</key><integer>8</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <!-- Friday -->
+        <dict>
+            <key>Weekday</key><integer>5</integer>
+            <key>Hour</key><integer>8</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string>/Users/jozefmisik/Dev/getsurfaced-gtm/docs/agents/daily-signal-scanner/logs/launchd.stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/jozefmisik/Dev/getsurfaced-gtm/docs/agents/daily-signal-scanner/logs/launchd.stderr.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin</string>
+    </dict>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/jozefmisik/Dev/getsurfaced-gtm</string>
+</dict>
+</plist>
