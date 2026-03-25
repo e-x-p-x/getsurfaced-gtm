@@ -1,0 +1,6 @@
+Person,Role,Available Hours per Sprint,S1 Hours,S2 Hours,S3 Hours,S4 Hours
+Kristof,Technical intern,40,23,11,3,13
+Edi,Sales intern,40,23,19,16,5
+Joe,Founder (senior),12,6,9,4,0
+Max,Founder (senior),12,14*,17*,8,12
+Chiara,Growth hacker (freelance),30,12,23,13,21

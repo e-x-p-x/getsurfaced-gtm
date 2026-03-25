@@ -1,0 +1,8 @@
+Hack Type,Leading Indicator,Minimum Threshold,Scale Threshold (2x minimum),Kill Threshold (50% of minimum)
+Outbound (email/LinkedIn),Reply rate,> 5%,> 10%,< 2.5%
+Content (LinkedIn / blog),Engagement rate,> 2% or 500+ impressions/post,> 4% or 1000+ impressions/post,< 1% or < 250 impressions/post
+Free tool / audit,Visits → email capture,> 10% conversion,> 20% conversion,< 5% conversion
+Partnerships / referrals,Partners activated,> 2 active,> 4 active,< 1 active
+Community / seeding,Inbound leads,> 3 from channel,> 6 from channel,< 2 from channel
+Paid / retargeting,Cost per lead,< €30 CPL,< €15 CPL,> €60 CPL
+Product-led (demo / widget),Activation rate,> 5% of visitors,> 10% of visitors,< 2.5% of visitors
